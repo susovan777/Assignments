@@ -22,6 +22,11 @@
       "@/*": ["./src/*"]
     }
   },
+  "content": [
+    "./src/app/**/*.{ts,tsx}",
+    "./src/components/**/*.{ts,tsx}",
+    "./src/pages/**/*.{ts,tsx}"
+  ],
   "include": [
     "next-env.d.ts",
     "**/*.ts",

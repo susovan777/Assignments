@@ -8,7 +8,7 @@ export const createEventSchema = z.object({
 });
 
 export const CreateAttendeeSchema = z.object({
-  name: z.string().min(1, "Name is required"),
+  name: z.string().min(2, "Name is required"),
   email: z.email("Invalid email"),
   eventId: z.string().min(1, "Event is required"),
 });
