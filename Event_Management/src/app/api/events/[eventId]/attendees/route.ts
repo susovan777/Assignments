@@ -1,12 +1,15 @@
 import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 import { prisma } from "@/lib/prisma";
 
 export async function GET(
-  _req: Request,
-  { params }: { params: { eventId: string } }
+  _req: NextRequest,
+  { params }: { params: Promise<{ eventId: string }> }
 ) {
+  const { eventId } = await params;
+
   const attendees = await prisma.attendee.findMany({
-    where: { eventId: params.eventId },
+    where: { eventId },
     orderBy: { name: "asc" },
   });
 
