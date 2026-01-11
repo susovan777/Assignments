@@ -1,5 +1,11 @@
-import cors from 'cors'
+import cors from 'cors';
 import express from 'express';
+import authRoutes from './src/routes/authRoutes.js'
+import purchaseRoutes from './src/routes/purchaseRoutes.js'
+import transferRoutes from './src/routes/transferRoutes.js'
+import dashboardRoutes from './src/routes/dashboardRoutes.js'
+import assignmentRoutes from './src/routes/assignementRoutes.js'
+
 
 const app = express();
 
@@ -11,6 +17,9 @@ app.use(cors());
 // Parse JSON bodies
 app.use(express.json());
 
+// Parse URL-encoded data into JavaScript object
+app.use(express.urlencoded({ extended: true }));
+
 // _______________ ROUTES _______________ //
 
 // Health check
@@ -20,6 +29,12 @@ app.get('/api/health', (req, res) => {
     message: 'Military Asset Management API is running',
   });
 });
+
+app.use('/api/auth', authRoutes);
+app.use('/api/dashboard', dashboardRoutes);
+app.use('/api/purchases', purchaseRoutes);
+app.use('/api/transfers', transferRoutes);
+app.use('/api/assignments', assignmentRoutes);
 
 // _______________ ERROR HANDLING _______________ //
 
