@@ -6,8 +6,8 @@ import {
   createExpenditure,
   getExpenditures,
 } from '../controllers/assignmentController.js';
-import { protect, authorize } from '../middleware/auth.js';
-import { auditLog } from '../middleware/auditLogger.js';
+import { protect, authorize } from '../middlewares/auth.js';
+import { auditLog } from '../middlewares/auditLogger.js';
 
 const router = express.Router();
 

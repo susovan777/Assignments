@@ -1,11 +1,11 @@
 import express from 'express';
-import { auditLog } from '../middleware/auditLogger.js';
+import { auditLog } from '../middlewares/auditLogger.js';
 import {
   createPurchase,
   getPurchases,
   getPurchase,
 } from '../controllers/purchaseController.js';
-import { protect, authorize } from '../middleware/auth.js';
+import { protect, authorize } from '../middlewares/auth.js';
 
 const router = express.Router();
 

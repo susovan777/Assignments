@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
+import Base from '../models/Base.js';
 
 // Generate JWT token
 const generateToken = (id) => {
@@ -57,7 +58,7 @@ export const login = async (req, res) => {
     });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: error.message });
   }
 };
 
@@ -74,6 +75,6 @@ export const getMe = async (req, res) => {
     });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: error.message });
   }
 };

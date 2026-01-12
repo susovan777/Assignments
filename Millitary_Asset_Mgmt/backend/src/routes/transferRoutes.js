@@ -1,6 +1,6 @@
 import express from 'express';
-import { auditLog } from '../middleware/auditLogger.js';
-import { protect, authorize } from '../middleware/auth.js';
+import { auditLog } from '../middlewares/auditLogger.js';
+import { protect, authorize } from '../middlewares/auth.js';
 import {
   createTransfer,
   getTransfers,
