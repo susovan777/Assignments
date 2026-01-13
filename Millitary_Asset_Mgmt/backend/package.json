@@ -1,16 +1,16 @@
 {
   "name": "millitary-asset-management",
   "version": "1.0.0",
-  "description": "Record millitary asset transaction",
+  "description": "Military Asset Management System Backend",
   "main": "server.js",
   "type": "module",
   "prettier": {
     "singleQuote": true
   },
   "scripts": {
+    "start": "node server.js",
     "seed": "node src/utils/seed.js",
-    "dev": "nodemon server.js",
-    "start": "node server.js"
+    "dev": "nodemon server.js"
   },
   "author": "Susovan Sahoo",
   "license": "ISC",

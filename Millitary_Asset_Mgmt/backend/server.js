@@ -6,7 +6,10 @@ import connectDB from './src/config/db.js';
 configDotenv();
 
 const port = process.env.port || 5000;
-const mongoUri = process.env.MONGO_URI_LOCAL || process.env.MONGO_URI_ATLAS
+const mongoUri =
+  process.env.NODE_ENV === 'production'
+    ? process.env.MONGO_URI_ATLAS
+    : process.env.MONGO_URI_LOCAL;
 
 // Connect to database
 connectDB(mongoUri);
@@ -14,8 +17,10 @@ connectDB(mongoUri);
 const startServer = async () => {
   try {
     app.listen(port, () => {
-      console.log(`🚀 Server running on port ${port}`);
-      console.log(`🔗 API health check: http://localhost:${port}/api/health`);
+      console.log(
+        `🚀 Server running in ${process.env.NODE_ENV} mode on port ${port}`
+      );
+      console.log(`🔗 Base API URL: http://localhost:${port}`);
     });
   } catch (error) {
     console.error('❌ Failed to start server:', error);

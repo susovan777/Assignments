@@ -1,11 +1,10 @@
 import cors from 'cors';
 import express from 'express';
-import authRoutes from './src/routes/authRoutes.js'
-import purchaseRoutes from './src/routes/purchaseRoutes.js'
-import transferRoutes from './src/routes/transferRoutes.js'
-import dashboardRoutes from './src/routes/dashboardRoutes.js'
-import assignmentRoutes from './src/routes/assignementRoutes.js'
-
+import authRoutes from './src/routes/authRoutes.js';
+import purchaseRoutes from './src/routes/purchaseRoutes.js';
+import transferRoutes from './src/routes/transferRoutes.js';
+import dashboardRoutes from './src/routes/dashboardRoutes.js';
+import assignmentRoutes from './src/routes/assignementRoutes.js';
 
 const app = express();
 
@@ -21,6 +20,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // _______________ ROUTES _______________ //
+
+// Base URL
+app.get('/', (req, res) => {
+  res.status(200).send('<h1>🛡️ Welcome to Millitary Asset Management Server</h1>')
+})
 
 // Health check
 app.get('/api/health', (req, res) => {
