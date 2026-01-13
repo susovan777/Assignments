@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { AuthProvider, useAuth } from "./context/AuthContext";
-import Layout from "./components/Layout";
-import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
-import Purchases from "./pages/Purchases";
-import Transfers from "./pages/Transfers";
+import { AuthProvider, useAuth } from "./context/authContext.jsx";
+import Login from "./pages/Login.jsx";
+import Layout from "./components/Layout.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
+import Purchases from "./pages/Purchases.jsx";
+import Transfers from "./pages/Transfers.jsx";
 import Assignments from "./pages/Assignements.jsx";
 
 // Protected Route Component
