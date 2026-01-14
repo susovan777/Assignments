@@ -14,7 +14,7 @@
 ```
 military-asset-management/
 │
-├── server/                          # Backend (Node.js + Express + MongoDB)
+├── backend/                          # Backend (Node.js + Express + MongoDB)
 │   ├── src/
 │   │   ├── config/
 │   │   │   └── db.js               # MongoDB connection
@@ -48,7 +48,7 @@ military-asset-management/
 │   ├── .env                         # Environment variables
 │   └── package.json
 │
-└── client/                          # Frontend (React + Vite + Tailwind)
+└── frontend/                          # Frontend (React + Vite + Tailwind)
     ├── src/
     │   ├── components/
     │   │   ├── Layout.jsx
