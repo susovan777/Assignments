@@ -3,7 +3,9 @@
 ## 🎯 Project Status: ✅ COMPLETE & READY
 
 **Deadline:** January 13, 2026  
-**Current Status:** All core features implemented and tested
+**Current Status:** All core features implemented and tested  
+**Deployed Frontend (Vercel):** [Live Demo](http://military-asset-mgmt-client.vercel.app)  
+**Backend (Vercel)**: [millitary-asset-mgmt.vercel.app](millitary-asset-mgmt.vercel.app)
 
 ---
 
@@ -75,6 +77,7 @@ military-asset-management/
 ## ✅ Features Implemented
 
 ### **Backend (100% Complete)**
+
 - ✅ RESTful API with Express
 - ✅ MongoDB database with 8 collections
 - ✅ JWT Authentication
@@ -87,6 +90,7 @@ military-asset-management/
 - ✅ Seed script for test data
 
 ### **Frontend (100% Complete)**
+
 - ✅ React 18 with Vite
 - ✅ Tailwind CSS styling
 - ✅ React Router for navigation
@@ -102,6 +106,7 @@ military-asset-management/
 - ✅ Error handling
 
 ### **Core Functionality**
+
 - ✅ User authentication and authorization
 - ✅ Dashboard metrics (Opening, Closing, Net Movement)
 - ✅ Purchase tracking
@@ -116,21 +121,22 @@ military-asset-management/
 
 ## 🔐 User Roles & Permissions
 
-| Feature | Admin | Base Commander | Logistics Officer |
-|---------|-------|----------------|-------------------|
-| View All Bases | ✅ | ❌ (Own base only) | ❌ (Own base only) |
-| Dashboard | ✅ | ✅ | ✅ |
-| Create Purchase | ✅ | ✅ | ✅ |
-| Create Transfer | ✅ | ✅ | ✅ |
-| Create Assignment | ✅ | ✅ | ❌ |
-| Create Expenditure | ✅ | ✅ | ❌ |
-| Return Assignment | ✅ | ✅ | ❌ |
+| Feature            | Admin | Base Commander     | Logistics Officer  |
+| ------------------ | ----- | ------------------ | ------------------ |
+| View All Bases     | ✅    | ❌ (Own base only) | ❌ (Own base only) |
+| Dashboard          | ✅    | ✅                 | ✅                 |
+| Create Purchase    | ✅    | ✅                 | ✅                 |
+| Create Transfer    | ✅    | ✅                 | ✅                 |
+| Create Assignment  | ✅    | ✅                 | ❌                 |
+| Create Expenditure | ✅    | ✅                 | ❌                 |
+| Return Assignment  | ✅    | ✅                 | ❌                 |
 
 ---
 
 ## 🚀 Quick Start Guide
 
 ### **Step 1: Setup Backend**
+
 ```bash
 cd backend
 npm install
@@ -140,6 +146,7 @@ npm run dev
 ```
 
 ### **Step 2: Setup Frontend**
+
 ```bash
 cd frontend
 npm install
@@ -147,6 +154,7 @@ npm run dev
 ```
 
 ### **Step 3: Login**
+
 ```
 URL: http://localhost:3000
 Email: admin@military.gov
@@ -158,30 +166,38 @@ Password: admin123
 ## 📊 Database Schema Summary
 
 ### **Users**
+
 - Stores credentials, role, assigned base
 
 ### **Bases**
+
 - Military base locations and commanders
 
 ### **Assets**
+
 - Equipment inventory per base
 - Tracks: opening/current balance, assigned, expended
 
 ### **Purchases**
+
 - Purchase records with quantity and date
 
 ### **Transfers**
+
 - Inter-base asset movements
 - Status: completed, pending, rejected
 
 ### **Assignments**
+
 - Assets assigned to personnel
 - Status: active, returned
 
 ### **Expenditures**
+
 - Assets consumed/expended
 
 ### **AuditLogs**
+
 - Complete audit trail of all operations
 
 ---
@@ -203,6 +219,7 @@ For your presentation, show these screens:
 ## 🔧 Technology Stack
 
 ### **Backend**
+
 - Node.js v16+
 - Express.js (Web framework)
 - MongoDB (Database)
@@ -213,6 +230,7 @@ For your presentation, show these screens:
 - Helmet (Security)
 
 ### **Frontend**
+
 - React 18
 - Vite (Build tool)
 - React Router v6
@@ -256,30 +274,6 @@ POST   /api/assignments/expenditures
 
 ---
 
-## 🎯 What Was Delivered
-
-### **Required Features (100%)**
-1. ✅ Dashboard with key metrics
-2. ✅ Opening/Closing/Net Movement tracking
-3. ✅ Purchases page with filters
-4. ✅ Transfers between bases
-5. ✅ Assignments to personnel
-6. ✅ Expenditure tracking
-7. ✅ Role-Based Access Control
-8. ✅ Date/Base/Type filters
-9. ✅ Secure authentication
-10. ✅ Audit logging
-
-### **Bonus Features**
-1. ✅ Visual charts (Bar chart on dashboard)
-2. ✅ Movement details breakdown
-3. ✅ Return assignment functionality
-4. ✅ Real-time balance updates
-5. ✅ Responsive design
-6. ✅ Loading states & error handling
-
----
-
 ## 📈 Database Metrics (From Seed Data)
 
 - **3 Bases:** Fort Alpha, Fort Bravo, Fort Charlie
@@ -295,12 +289,14 @@ POST   /api/assignments/expenditures
 ## 🚀 Deployment Checklist
 
 ### **Backend (Railway/Render)**
+
 - [ ] Set environment variables
 - [ ] Update MongoDB URI to Atlas
 - [ ] Set NODE_ENV=production
 - [ ] Configure CORS for frontend URL
 
 ### **Frontend (Vercel)**
+
 - [ ] Set VITE_API_URL to backend URL
 - [ ] Build: `npm run build`
 - [ ] Deploy to Vercel
@@ -308,26 +304,30 @@ POST   /api/assignments/expenditures
 
 ---
 
-## 🎓 Presentation Talking Points
+## 🎓 Presentation Points
 
 1. **Problem Statement**
+
    - Need for transparent military asset tracking
    - Accountability and audit requirements
    - Multi-base coordination challenges
 
 2. **Solution**
+
    - Full-stack web application
    - Real-time inventory tracking
    - Role-based access control
    - Complete audit trail
 
 3. **Technical Architecture**
+
    - MERN stack (MongoDB, Express, React, Node)
    - RESTful API design
    - JWT authentication
    - Responsive UI with Tailwind
 
 4. **Key Features Demo**
+
    - Live dashboard with metrics
    - Purchase workflow
    - Inter-base transfers
@@ -342,22 +342,10 @@ POST   /api/assignments/expenditures
 
 ---
 
-## 🏆 Project Success Metrics
-
-✅ **All Requirements Met**  
-✅ **Clean, Professional Code**  
-✅ **Working Prototype**  
-✅ **Comprehensive Documentation**  
-✅ **Ready for Demo**  
-✅ **On Time Delivery**
-
----
-
 ## 📞 Final Notes
 
 **Status:** Production-ready MVP  
 **Code Quality:** Production-grade with comments  
 **Documentation:** Complete with setup guides  
 **Testing:** Manually tested all features  
-**Deployment Ready:** Can deploy immediately  
-
+**Deployment Ready:** Can deploy immediately
