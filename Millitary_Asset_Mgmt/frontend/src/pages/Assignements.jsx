@@ -6,6 +6,7 @@ const Assignments = () => {
   const [activeTab, setActiveTab] = useState("assignments");
   const [assignments, setAssignments] = useState([]);
   const [expenditures, setExpenditures] = useState([]);
+  const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -44,7 +45,9 @@ const Assignments = () => {
         <h1 className="text-2xl font-bold text-gray-900">
           Assignments & Expenditures
         </h1>
-        <button className="btn-primary flex items-center space-x-2">
+        <button
+          onClick={() => setShowModal(true)}
+          className="btn-primary flex items-center space-x-2">
           <Plus className="w-4 h-4" />
           <span>
             New {activeTab === "assignments" ? "Assignment" : "Expenditure"}

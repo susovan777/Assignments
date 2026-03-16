@@ -94,6 +94,12 @@ const Login = () => {
               Demo Credentials:
               <br />
               <span className="font-medium">admin@military.gov</span> / admin123
+              <br />
+              <span className="font-medium">commander.alpha@military.gov</span> / password123
+              <br />
+              <span className="font-medium">commander.bravo@military.gov</span> / password123
+              <br />
+              <span className="font-medium">logistics@military.gov</span> / password123
             </p>
           </div>
         </div>
