@@ -1,9 +1,23 @@
-import cors from 'cors'
-import express from 'express'
+import cors from 'cors';
+import express from 'express';
+import uploadRouter from './src/routes/uploadRouter.js';
+import { errorHandler } from './src/middlewares/errorHandler.js';
 
-const app = express()
+const app = express();
 
-app.use(cors())
-app.use(express.json())
+app.use(cors());
+app.use(express.json());
 
-export default app
+app.get('/', (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'Server is running',
+    time: new Date().toLocaleString(),
+  });
+});
+
+app.use('/api/upload', uploadRouter);
+
+app.use(errorHandler);
+
+export default app;
