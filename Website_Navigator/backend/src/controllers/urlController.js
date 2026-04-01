@@ -9,7 +9,7 @@ export const uploadFile = async (req, res, next) => {
       });
 
     // Parse workbook from buffer (works for .xlsx and .csv)
-    const workbook = XLSX.read(req.file.buffer, { type: buffer });
+    const workbook = XLSX.read(req.file.buffer, { type: 'buffer' });
     const sheet = workbook.Sheets[workbook.SheetNames[0]];
     const rows = XLSX.utils.sheet_to_json(sheet, { header: 1 });
 
@@ -27,7 +27,7 @@ export const uploadFile = async (req, res, next) => {
 
     // Save to Database
     const saved = await UrlSet.create({
-      fileName: req.file.originalName,
+      fileName: req.file.originalname,
       urls,
     });
 

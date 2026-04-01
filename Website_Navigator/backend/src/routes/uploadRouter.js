@@ -9,14 +9,14 @@ const upload = multer({
   storage,
   fileFilter: (_, file, cb) => {
     const allowed = [
-      'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-      'application/vnd.ms-excel',
-      'text/csv',
+      'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', // .xlsx
+      'application/vnd.ms-excel', // .xls
+      'text/csv', // .csv
     ];
     cb(null, allowed.includes(file.mimetype));
   },
 });
 
-router.post('/', upload.single('file'), uploadFile);
+uploadRouter.post('/', upload.single('file'), uploadFile);
 
 export default uploadRouter;
