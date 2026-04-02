@@ -1,20 +1,18 @@
-const NavBar = ({
+export const NavBar = ({
   currentUrl,
   currentIndex,
   total,
   onPrev,
   onNext,
-  refresh,
   isFirst,
   isLast,
+  onRefresh,
 }) => {
-  const handleOpenTab = () => {
-    if (currentUrl) window.open(currentUrl, '_blank', 'noopener,noreferrer');
-  };
+  const handleOpenTab = () =>
+    window.open(currentUrl, '_blank', 'noopener,noreferrer');
 
   return (
     <div className="h-12 bg-white border-b border-gray-200 flex items-center gap-2 px-3 shrink-0">
-      {/* Prev button */}
       <button
         onClick={onPrev}
         disabled={isFirst}
@@ -37,7 +35,6 @@ const NavBar = ({
         </svg>
       </button>
 
-      {/* Next button */}
       <button
         onClick={onNext}
         disabled={isLast}
@@ -60,31 +57,8 @@ const NavBar = ({
         </svg>
       </button>
 
-      {/* Refresh button */}
-      <button
-        onClick={refresh}
-        className="group w-8 h-8 rounded-lg flex items-center justify-center text-gray-500
-          hover:bg-gray-100 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-        title="Refresh"
-      >
-        <svg
-          className="w-4 h-4 transition-transform duration-300 group-active:rotate-360"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M22 10C22 10 19.995 7.26822 18.3662 5.63824C16.7373 4.00827 14.4864 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.1031 21 19.5649 18.2543 20.6482 14.5M22 10V4M22 10H16"
-          />
-        </svg>
-      </button>
-
       {/* URL bar */}
       <div className="flex-1 flex items-center gap-2 bg-gray-100 rounded-lg px-3 h-8 overflow-hidden">
-        {/* Lock icon */}
         <svg
           className="w-3 h-3 text-gray-400 shrink-0"
           fill="none"
@@ -101,7 +75,7 @@ const NavBar = ({
         <span className="text-xs text-gray-600 truncate">{currentUrl}</span>
       </div>
 
-      {/* Counter badge */}
+      {/* Counter */}
       <span className="text-xs text-gray-500 bg-gray-100 px-2.5 py-1 rounded-full shrink-0 font-mono">
         {currentIndex + 1} / {total}
       </span>
@@ -127,8 +101,28 @@ const NavBar = ({
           />
         </svg>
       </button>
+
+      {/* Refresh */}
+      <button
+        onClick={onRefresh}
+        className="w-8 h-8 rounded-lg flex items-center justify-center text-gray-500
+          hover:bg-gray-100 transition-colors"
+        title="Reload page"
+      >
+        <svg
+          className="w-4 h-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+          />
+        </svg>
+      </button>
     </div>
   );
 };
-
-export default NavBar;
