@@ -6,6 +6,7 @@
   "prettier": {
     "singleQuote": true
   },
+  "packageManager": "pnpm@10.33.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
