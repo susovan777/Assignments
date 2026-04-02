@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
   });
 });
 
-app.use('/api/upload', uploadRouter);
+app.use('/api', uploadRouter);
 
 app.use(errorHandler);
 

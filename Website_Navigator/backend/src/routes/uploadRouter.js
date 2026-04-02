@@ -1,6 +1,6 @@
 import express from 'express';
 import multer from 'multer';
-import { uploadFile } from '../controllers/urlController.js';
+import { getUrls, uploadFile } from '../controllers/urlController.js';
 
 const uploadRouter = express.Router();
 
@@ -17,6 +17,7 @@ const upload = multer({
   },
 });
 
-uploadRouter.post('/', upload.single('file'), uploadFile);
+uploadRouter.get('/latest', getUrls) // get urls if exists
+uploadRouter.post('/upload', upload.single('file'), uploadFile); // upload file
 
 export default uploadRouter;

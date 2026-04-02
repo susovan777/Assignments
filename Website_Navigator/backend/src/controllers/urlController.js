@@ -25,6 +25,9 @@ export const uploadFile = async (req, res, next) => {
         .status(422)
         .json({ message: 'No valid URLs found in the file' });
 
+    // Delete all the documents for now
+    await UrlSet.deleteMany({});
+
     // Save to Database
     const saved = await UrlSet.create({
       fileName: req.file.originalname,
@@ -32,6 +35,17 @@ export const uploadFile = async (req, res, next) => {
     });
 
     res.status(201).json({ succes: true, id: saved._id, urls });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const getUrls = async (req, res, next) => {
+  try {
+    const latest = await UrlSet.findOne().sort({ createdAt: -1 });
+    if (!latest) return res.json({ urls: [] });
+
+    res.status(200).json({ succes: true, id: latest._id, urls: latest.urls });
   } catch (error) {
     next(error);
   }
