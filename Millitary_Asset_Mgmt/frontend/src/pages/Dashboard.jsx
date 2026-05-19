@@ -22,6 +22,8 @@ const Dashboard = () => {
   const [metrics, setMetrics] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [bases, setBases] = useState([]);
+  const [loadingBases, setLoadingBases] = useState(true);
   const [filters, setFilters] = useState({
     baseId: "",
     equipmentType: "",
@@ -127,6 +129,21 @@ const Dashboard = () => {
       <div className="card">
         <h3 className="text-lg font-semibold mb-4">Filters</h3>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Base
+            </label>
+            <select
+              name="baseId"
+              value={filters.baseId}
+              onChange={handleFilterChange}
+              className="input-field">
+              <option value="">All Bases</option>
+              <option value="alpha">Fort Alpha</option>
+              <option value="bravo">Fort Bravo</option>
+              <option value="charlie">Fort Charlie</option>
+            </select>
+          </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Equipment Type
